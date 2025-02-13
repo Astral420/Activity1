@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="HelperTextStyle" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:paddingStart">-10dp</item>
+    </style>
+</resources>
