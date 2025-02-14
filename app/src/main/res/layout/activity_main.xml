@@ -129,19 +129,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/province_TextInputLayout"
+        android:id="@+id/barangay_TextInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
-        android:hint="Province*"
+        android:hint="Barangay*"
         app:layout_constraintStart_toEndOf="@+id/address_TextInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/middleInitial_TextInputLayout"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/province"
+            android:id="@+id/barangay"
             android:layout_width="189dp"
             android:layout_height="49dp"
             android:maxLines="1"
@@ -152,9 +152,11 @@
         android:id="@+id/CitySpinner"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="294dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="4dp"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/address_TextInputLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

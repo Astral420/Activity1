@@ -18,8 +18,18 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputLayout lastNameTextInputLayout, givenNameTextInputLayout, provinceTextInputLayout;
-    TextInputEditText lastName, givenName, province;
+    TextInputLayout lastNameTextInputLayout, givenNameTextInputLayout, barangayTextInputLayout;
+    TextInputEditText lastName, givenName, barangay;
+    Spinner spinCity;
+
+    public String [] city = {
+            "Malolos", "Meycauayan", "San Jose del Monte", "Baliuag", "Santa Maria", "Marilao", "San Miguel", "Plaridel", "Pulilan",
+            "Hagonoy", "Bustos", "Calumpit", "Guiguinto", "San Ildefonso", "San Rafael", "Doña Remedios Trinidad", "Obando", "Paombong",
+            "Norzagaray", "Angat"
+    };
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +38,38 @@ public class MainActivity extends AppCompatActivity {
 
         lastNameTextInputLayout = findViewById(R.id.lastName_TextInputLayout);
         givenNameTextInputLayout = findViewById(R.id.givenName_TextInputLayout);
-        provinceTextInputLayout = findViewById(R.id.province_TextInputLayout);
+        barangayTextInputLayout = findViewById(R.id.barangay_TextInputLayout);
 
         lastName = findViewById(R.id.last_Name);
         givenName = findViewById(R.id.given_Name);
-        province = findViewById(R.id.province);
+        barangay = findViewById(R.id.barangay);
 
         setupAsteriskBehavior(lastNameTextInputLayout, lastName, "Last Name*");
         setupAsteriskBehavior(givenNameTextInputLayout, givenName, "Given Name*");
-        setupAsteriskBehavior(provinceTextInputLayout,province,"Province*");
+        setupAsteriskBehavior(barangayTextInputLayout,barangay,"Barangay*");
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void setupAsteriskBehavior(TextInputLayout textInputLayout, TextInputEditText editText, String originalHint) {
         final String simpleHint = originalHint.replace("*", ""); // Remove asterisk for focus
@@ -58,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
         if (activeField != givenNameTextInputLayout) {
             givenNameTextInputLayout.setHint(Html.fromHtml("Given Name*"));
         }
-        if (activeField != provinceTextInputLayout){
-            provinceTextInputLayout.setHint(Html.fromHtml("Province*"));
+        if (activeField != barangayTextInputLayout){
+            barangayTextInputLayout.setHint(Html.fromHtml("Barangay*"));
         }
     }
 }
