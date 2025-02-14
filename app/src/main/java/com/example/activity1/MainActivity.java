@@ -18,8 +18,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputLayout lastNameTextInputLayout, givenNameTextInputLayout;
-    TextInputEditText lastNameEditText, givenNameEditText;
+    TextInputLayout lastNameTextInputLayout, givenNameTextInputLayout, provinceTextInputLayout;
+    TextInputEditText lastName, givenName, province;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
         lastNameTextInputLayout = findViewById(R.id.lastName_TextInputLayout);
         givenNameTextInputLayout = findViewById(R.id.givenName_TextInputLayout);
-        lastNameEditText = findViewById(R.id.last_Name);
-        givenNameEditText = findViewById(R.id.given_Name);
+        provinceTextInputLayout = findViewById(R.id.province_TextInputLayout);
 
-        setupAsteriskBehavior(lastNameTextInputLayout, lastNameEditText, "Last Name*");
-        setupAsteriskBehavior(givenNameTextInputLayout, givenNameEditText, "Given Name*");
+        lastName = findViewById(R.id.last_Name);
+        givenName = findViewById(R.id.given_Name);
+        province = findViewById(R.id.province);
+
+        setupAsteriskBehavior(lastNameTextInputLayout, lastName, "Last Name*");
+        setupAsteriskBehavior(givenNameTextInputLayout, givenName, "Given Name*");
+        setupAsteriskBehavior(provinceTextInputLayout,province,"Province*");
     }
 
     private void setupAsteriskBehavior(TextInputLayout textInputLayout, TextInputEditText editText, String originalHint) {
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (activeField != givenNameTextInputLayout) {
             givenNameTextInputLayout.setHint(Html.fromHtml("Given Name*"));
+        }
+        if (activeField != provinceTextInputLayout){
+            provinceTextInputLayout.setHint(Html.fromHtml("Province*"));
         }
     }
 }
